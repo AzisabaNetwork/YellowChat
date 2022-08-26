@@ -1,0 +1,10 @@
+name: YellowChat
+main: net.azisaba.yellowchat.YellowChat
+version: @VERSION@
+commands:
+  yellowchat:
+    permission: yellowchat.use_command
+permissions:
+  yellowchat.use_command:
+    description: Allows you to use the /yellowchat command.
+    default: true
