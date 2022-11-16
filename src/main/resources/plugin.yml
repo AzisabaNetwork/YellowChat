@@ -8,3 +8,9 @@ permissions:
   yellowchat.use_command:
     description: Allows you to use the /yellowchat command.
     default: true
+  yellowchat.use:
+    description: Allows you to use the YellowChat.
+    default: false
+  yellowchat.default_off:
+    description: If true, the yellow chat feature is off by default.
+    default: false

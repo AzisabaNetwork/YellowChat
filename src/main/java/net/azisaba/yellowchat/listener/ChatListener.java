@@ -11,7 +11,18 @@ public class ChatListener implements Listener {
     public void onChat(AsyncPlayerChatEvent e) {
         if (!YellowChat.getInstance().getExcludedPlayers().contains(e.getPlayer().getUniqueId()) &&
                 e.getPlayer().hasPermission("yellowchat.use")) {
-            e.setMessage("\u00a7e" + e.getMessage());
+            int end = Math.min(5, e.getMessage().length());
+            int index = 0;
+            for (char c : e.getMessage().substring(0, end).toCharArray()) {
+                if (c == '!' || c == '#') {
+                    index++;
+                } else {
+                    break;
+                }
+            }
+            String prefix = e.getMessage().substring(0, index);
+            String message = e.getMessage().substring(index);
+            e.setMessage(prefix + "\u00a7e" + message);
         }
     }
 }

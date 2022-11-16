@@ -2,6 +2,7 @@ package net.azisaba.yellowchat;
 
 import net.azisaba.yellowchat.command.YellowChatCommand;
 import net.azisaba.yellowchat.listener.ChatListener;
+import net.azisaba.yellowchat.listener.JoinListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -18,6 +19,7 @@ public final class YellowChat extends JavaPlugin {
     public void onEnable() {
         getConfig().getStringList("excluded-players").forEach(uuid -> excludedPlayers.add(UUID.fromString(uuid)));
         Bukkit.getPluginManager().registerEvents(new ChatListener(), this);
+        Bukkit.getPluginManager().registerEvents(new JoinListener(), this);
         Objects.requireNonNull(Bukkit.getPluginCommand("yellowchat")).setExecutor(new YellowChatCommand());
     }
 

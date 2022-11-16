@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "net.azisaba"
-version = "1.0.0-SNAPSHOT"
+version = "1.1.0"
 
 java.toolchain.languageVersion.set(JavaLanguageVersion.of(8))
 
@@ -13,6 +13,9 @@ repositories {
 }
 
 dependencies {
+    // annotations
+    compileOnly("org.jetbrains:annotations:23.0.0")
+
     // spigot-api
     compileOnly("org.spigotmc:spigot-api:1.12.2-R0.1-SNAPSHOT")
 }
